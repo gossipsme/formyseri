@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Seri 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fde2ff, #e2f0ff, #e7ffe2);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff77aa;
+      margin-bottom: 10px;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1.4em;
+      color: #555;
+      max-width: 700px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ffd1dc;
+      color: #444;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background: #ffc3d8;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .heart {
+      width: 15px;
+      height: 15px;
+      background: #ffb6c1;
+      position: absolute;
+      transform: rotate(45deg);
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: #ffb6c1;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -10%;
+        opacity: 0;
+        transform: translateX(0) scale(1) rotate(45deg);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 110%;
+        transform: translateX(50px) scale(1.5) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts-container"></div>
+
+<h1>Happy Birthday Seri 🎂🌸</h1>
+<p>Seri, today the world got a little brighter because of you.<br>
+You’re sweet, kind, and honestly... you’ve been on my mind more than you know. 💕</p>
+
+<button class="btn" onclick="showSurprise()">Click for a Surprise</button>
+
+<div class="hidden" id="surprise"
